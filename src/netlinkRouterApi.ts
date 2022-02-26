@@ -32,11 +32,10 @@ const checkIsLoggedIn = async (gateWayIp: string) => {
     const $ = cheerio.load(response.data);
     verificationCode = $('#check_code').val();
     csrfToken = $('input[name=csrftoken]').val();
-    if (verificationCode && csrfToken) {
-      return { verificationCode, csrfToken, error: {} };
-    }
   } catch (e) {
     return {
+      verificationCode: undefined,
+      csrfToken: undefined,
       error: {
         message:
           'There is an issue with your network or please check the details provided are correct',
@@ -44,7 +43,7 @@ const checkIsLoggedIn = async (gateWayIp: string) => {
     };
   }
 
-  return { error: {} };
+  return { verificationCode, csrfToken, error: undefined };
 };
 
 const getLogoutCsrfToken = async (gateWayIp: string) => {
@@ -104,7 +103,9 @@ export const logout = async (gateWayIp: string) => {
   }
 };
 
-const getMyIp = async (gateWayIp: string) => {
+const getMyIp: (gateWayIp: string) => Promise<string> = async (
+  gateWayIp: string
+) => {
   try {
     const response = await axios.get(
       `http://${gateWayIp}/status_net_connet_info_en.asp`
