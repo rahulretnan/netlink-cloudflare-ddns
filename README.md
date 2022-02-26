@@ -1,4 +1,4 @@
-# Netlink-Cloudflare-DDNS
+# Netlink Cloudflare DDNS
 
 [![MIT License](https://img.shields.io/github/license/NVictaTechSolution/netlink-cloudflare-ddns)](https://raw.githubusercontent.com/NVictaTechSolution/netlink-cloudflare-ddns/main/LICENSE)
 
