@@ -1,7 +1,8 @@
-export * from './cloudflareApi';
-export * from './netlinkRouterApi';
 import { ICloudflareApiProps, updateARecordIp } from './cloudflareApi';
 import { getPublicIpAddress, IGetPublicIpAddress } from './netlinkRouterApi';
+
+export * from './cloudflareApi';
+export * from './netlinkRouterApi';
 
 export type INetlinkCloudflareDDnsProps = ICloudflareApiProps &
   IGetPublicIpAddress;
