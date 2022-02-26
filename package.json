@@ -1,0 +1,74 @@
+{
+  "name": "netlink-cloudflare-ddns",
+  "version": "0.1.0",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "description": "This package helps you to update your Dynamic WAN IP of Netlink Router into Cloudflare Dynamic DNS (DDNS) service.",
+  "keywords": [
+    "netlink-cloudflare-ddns",
+    "netlink-cloudflare",
+    "cloudflare-ddns",
+    "cloudflare",
+    "netlink",
+    "dns",
+    "ddns",
+    "DyDNS",
+    "cloudflare-updater"
+  ],
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build",
+    "size": "size-limit",
+    "analyze": "size-limit --why"
+  },
+  "peerDependencies": {},
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "author": "Rahul Retnan <rahul@nvicta.me>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NVictaTechSolution/netlink-cloudflare-ddns.git"
+  },
+  "module": "dist/netlink-cloudflare-ddns.esm.js",
+  "size-limit": [
+    {
+      "path": "dist/netlink-cloudflare-ddns.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/netlink-cloudflare-ddns.esm.js",
+      "limit": "10 KB"
+    }
+  ],
+  "devDependencies": {
+    "@size-limit/preset-small-lib": "^7.0.8",
+    "husky": "^7.0.4",
+    "size-limit": "^7.0.8",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.3.1",
+    "typescript": "^4.5.5"
+  },
+  "dependencies": {
+    "axios": "^0.26.0",
+    "cheerio": "^1.0.0-rc.10"
+  }
+}
