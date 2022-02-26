@@ -1,13 +1,11 @@
 import { ICloudflareApiProps, updateARecordIp } from './cloudflareApi';
 import { getPublicIpAddress, IGetPublicIpAddress } from './netlinkRouterApi';
-
 export * from './cloudflareApi';
 export * from './netlinkRouterApi';
 
-export type INetlinkCloudflareDDnsProps = ICloudflareApiProps &
-  IGetPublicIpAddress;
+export type INetlinkDDnsProps = ICloudflareApiProps & IGetPublicIpAddress;
 
-export const netlinkCloudFlareDDns = async ({
+const netlinkDDns = async ({
   email,
   auth_key,
   auth_method,
@@ -18,7 +16,7 @@ export const netlinkCloudFlareDDns = async ({
   gateWayIp,
   username,
   password,
-}: INetlinkCloudflareDDnsProps) => {
+}: INetlinkDDnsProps) => {
   const publicIpAddress: string | undefined = await getPublicIpAddress({
     gateWayIp,
     password,
@@ -37,3 +35,5 @@ export const netlinkCloudFlareDDns = async ({
     });
   }
 };
+
+module.exports = netlinkDDns;

@@ -36,14 +36,14 @@ Install **netlink-cloudflare-ddns** with **npm**
 
 ```javascript
 // ES6 or TypeScript:
-import netlinkCloudFlareDDns from 'netlink-cloudflare-ddns';
+import netlinkDDns from 'netlink-cloudflare-ddns';
 
 // In other environments:
 
-const netlinkCloudFlareDDns = require('netlink-cloudflare-ddns');
+const netlinkDDns = require('netlink-cloudflare-ddns');
 
 setInterval(async () => {
-  await netlinkCloudFlareDDns({
+  await netlinkDDns({
     email: 'email@example.com',
     auth_key: 'smlkSIOKMSJBJBCXJBmSKMSSOsMOm0OSK',
     auth_method: 'token',
